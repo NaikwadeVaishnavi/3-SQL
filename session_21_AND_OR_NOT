@@ -1,0 +1,54 @@
+
+select * from address;
+select address,city_id from address where city_id>200;
+
+---Logical opration
+--AND--------------OR------NOT
+
+select * from film
+
+select film_id,title from film where language_id=1 AND rental_duration=7;----191 row
+
+select film_id,title from film where language_id=1 OR rental_duration=7;---1000 row
+
+select film_id,title from film where NOT language_id=1;------1row
+
+select * from film where rental_rate > 4 and replacement_cost >=19.99;----173row
+
+select * from film where rental_rate> 4 and replacement_cost>=19.99 and rating='R'----34row
+
+select count(title) from film where rental_rate> 4 and replacement_cost>=19.99 and rating='R'----34row
+
+select count(*) from film where rental_rate> 4 and replacement_cost>=19.99 and rating='R'----34row
+
+select * from film where rating='R' or rating='PG-13'----148row
+
+select * from film where not rating='R'-----------------805row
+
+select * from  film where not rental_rate <4; -----336row
+
+--Que-1   A customer forgert thir wallent find thir email to infrom to them name is Nancy THomas
+select email from  customer where first_name='Nancy'  AND last_name='Thomas';  
+                          ---"nancy.thomas@sakilacustomer.org"
+
+
+--Que-2  a customer want to know what the movie 'Outlaw Hanky' iss about
+         --Could you givve them y=the discription from movie
+select * from film;
+select description from film where title='Outlaw Hanky';
+                   --A Thoughtful Story of a Astronaut And a Composer who must Conquer a Dog in The Sahara Desert
+
+
+--Que-3   A customer is late on thir movire return and we mailed them a latter to thir address at '259 lpoh Drive'.
+          --we should call them on the phone find phone number
+select * from address;
+select phone from address where address='259 Ipoh Drive';
+                ---"419009857119"
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+SELECT * FROM NEW_INFO
+
+
+ALTER TABLE NEW_INFO DROP COLUMN  PEOPLE 
+
+ALTER TABLE NEW_INFO DROP COLUMN  IF EXISTS PEOPLE
+    ----- column "people" of relation "new_info" does not exist, skipping

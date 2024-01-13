@@ -1,0 +1,46 @@
+--select all columns
+select * from film
+
+--Distinct_function
+select distinct store_id from customer
+select distinct store_id,customer_id from customer
+select * from customer
+
+--Acces without duplicate entery
+select * from film
+select distinct rental_rate,release_year from film
+
+--what ratings do we have available?
+select distinct rating from film
+
+--count()
+select count(title) from film
+
+--count dublicate columns
+select count (distinct rental_rate) from film ---------3
+
+--count the row from table
+select count(*) from film
+
+--count any dublicte entry
+select * from payment
+select count(*) from payment
+select amount from payment
+select distinct(amount) from payment
+select count(distinct amount) from payment
+
+--where-----------------filter
+select * from film
+
+--select table where rating = R
+select title,rating from film where rating='R'
+
+--selecgt table where not rating = G
+select * from film where not rating='G'
+
+---select muliple option
+select title,rating,rental_rate from film where rating='R' and rental_rate='4.99'
+
+--select rental rating is more than 3
+select title,rental_rate from film where rental_rate > 3;
+

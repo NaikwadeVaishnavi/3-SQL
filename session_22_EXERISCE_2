@@ -1,0 +1,23 @@
+--Que--1 we have tow staff members,with staff IDs 1 and 2 we want to give a bonus to
+		----the staff member that handled the most payemnt.( Most in term of number of payments)
+		---- processed,not  total dollar amount).
+		----------How many payment did each satff member handle and who  gets the bouns?
+
+select * from payment
+select staff_id,COUNT(amount) from payment group by staff_id
+
+
+--Que -2  corporate HQ is conducting a study on the relationship between replacement cost and
+		------movir MPAA rating(e.g G,PG,R ) 
+		----what is the avarange replacement cost er mppa rating
+
+select * from film
+select rating,round(avg(replacement_cost),2) from film group by rating
+
+--Que-3 we are running a promotion to reward our top 5 customer with coupons
+---what arethe customer ids of the top5 customer by  total spend
+
+select * from payment
+select customer_id,sum(amount) from payment group by customer_id order by sum(amount) desc limit 5
+
+

@@ -1,0 +1,54 @@
+--IN
+SELECT DISTINCT (AMOUNT) FROM PAYMENT ORDER BY  AMOUNT 
+
+SELECT AMOUNT FROM PAYMENT WHERE AMOUNT IN (0.99,1.98,1.99)
+
+SELECT COUNT(*) FROM PAYMENT WHERE AMOUNT IN (0.99,1.98,1.99)
+
+SELECT COUNT(*) FROM PAYMENT WHERE AMOUNT IN (0.99,1.98,1.99)
+
+select * from customer
+SELECT * FROM CUSTOMER WHERE FIRST_NAME IN ('Mary','Linda','Maria')
+
+--Like
+SELECT * from film where title Like 'M%'
+
+select * from customer where first_name like 'M%'
+
+select * from customer where first_name like 'm%'---No  result becoues the case santative
+
+select * from customer where first_name Ilike 'm%'
+
+select count(*) from customer where first_name like 'M%' 
+
+select * from customer where first_name like 'M%' and last_name like 'L%'
+
+select * from customer where first_name like 'm%' and last_name like 'l%'--No result
+
+select * from customer where first_name Ilike 'm%' and last_name like 'l%'
+
+select * from customer where first_name ilike 'j%' AND last_name ilike 's%'
+
+select * from customer where first_name ilike '%er%'
+
+select * from customer where first_name ilike '_her%'
+
+select * from customer where first_name ilike '%ar'
+
+select * from customer where first_name ilike 'A%'
+
+select * from customer where first_name ilike 'A%' order by last_name desc
+
+select * from customer where first_name like 'A%' and last_name like 'B%' order by last_name
+
+--Que-1  how many payment tranction wre grether than $5.00
+select count(*) from payment where amount > 5;
+
+--Que-2 how many actor first name strat with P
+select count(*) from actor where first_name ilike 'P%' 
+
+
+
+
+
+

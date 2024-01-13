@@ -1,0 +1,37 @@
+select * from film
+
+select min(replacement_Cost) from film---9.99
+
+select max(replacement_Cost) from film---29.99
+
+select AVG(replacement_Cost) from film---19.9840000000000000
+
+SELECT ROUND(AVG(replacement_cost),2) from film ---19.98
+
+select sum(replacement_cost) from film----19984.00
+
+---group_By
+select distinct(rating) from film
+select rating,sum(replacement_cost) from film group by rating order by sum(replacement_cost)
+
+-------------------------------------------------------------------------------
+select * from payment
+
+select customer_id from payment group by  customer_id order by customer_id 
+
+select customer_id, sum (amount) from payment group by customer_id
+
+select customer_id, sum(amount) from payment group by customer_id order by sum(amount)
+
+select  customer_id, sum(amount) from payment group by customer_id order by sum( amount) desc
+
+--------------------------------------------------------------------------------
+select customer_id,staff_id,sum(amount) from payment group by staff_id,customer_id
+
+select customer_id,staff_id,sum(amount) from payment group by staff_id,customer_id order by customer_id
+
+select distinct(date(payment_date)) from payment---32
+select DATE(payment_date),sum(amount) from payment group by DATE(payment_date) ---32
+
+select  date(payment_date),sum(amount) from payment group by date(payment_date) order by sum(amount)
+

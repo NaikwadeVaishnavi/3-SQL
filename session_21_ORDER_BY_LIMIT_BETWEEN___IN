@@ -1,0 +1,54 @@
+---Order_by
+select * from film
+select title from film order by  film_id
+
+SELECT * FROM CUSTOMER;
+
+SELECT * FROM CUSTOMER ORDER BY FIRST_NAME ASC
+
+SELECT * FROM CUSTOMER ORDER BY FIRST_NAME DESC
+
+SELECT * FROM CUSTOMER ORDER BY STORE_ID
+
+SELECT STORE_ID,FIRST_NAME,LAST_NAME FROM CUSTOMER ORDER BY STORE_ID,LAST_NAME
+
+SELECT STORE_ID,FIRST_NAME,LAST_NAME FROM CUSTOMER ORDER BY  STORE_ID ASC,LAST_NAME DESC
+
+
+---LIMIT-----
+
+SELECT * FROM PAYMENT ORDER BY PAYMENT_DATE DESC LIMIT 5
+
+SELECT * FROM PAYMENT WHERE NOT AMOUNT=0 ORDER BY PAYMENT_DATE DESC LIMIT 5
+
+
+--Que-1 we want to remard ore first 10 apying customer
+            ---what are the customer id of the first 10 customer who created a payment
+select customer_id from payment  order by payment_date desc limit 10
+
+
+--Que-2  customer want  to quicky rent a video to watch over their short lunch break.
+           --what are the title of 5 shortest movies?
+select title,length from film order by length Asc limit 5
+
+--Que-3 if the previoues customer can watch any movies that is 50  min  or less in run time
+           --how many option does she have?
+ select count(title) from film  where length<=50;---37
+ 
+ 
+ 
+ --between
+SELECT * FROM PAYMENT WHERE AMOUNT BETWEEN  8 AND 9;
+
+SELECT COUNT(*) FROM PAYMENT WHERE AMOUNT BETWEEN 8 AND 9;---439
+
+SELECT COUNT(*) FROM PAYMENT WHERE NOT AMOUNT BETWEEN 8 AND 9;---14157
+
+SELECT * FROM PAYMENT WHERE PAYMENT_DATE BETWEEN '2007-02-01' AND '2007-02-19'
+
+--IN
+
+
+
+
+

@@ -1,0 +1,29 @@
+show all
+
+show timezone
+
+select now()
+
+select current_date
+
+select * from payment
+
+select extract(year from payment_date) as myyear from payment
+
+select extract(month from payment_date) as mymonth from payment
+
+select extract(quarter from payment_date) as myquater from payment
+
+select AGE(payment_date) from payment
+
+select TO_char(payment_date,'MM/DD/YYYY') from payment
+
+select to_char(payment_date,'DD/MM/YYY') from payment
+
+---Que1 fromat your answer to return back the full month name
+
+select distinct( to_char(payment_date,'Month') ) from payment
+
+
+
+

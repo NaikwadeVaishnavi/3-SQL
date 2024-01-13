@@ -1,0 +1,38 @@
+select customer_id ,sum(amount) from payment where customer_id not in (184,87,477) group by customer_id
+
+
+select customer_id,sum(amount) from payment group by  customer_id having sum(amount) >100
+
+
+select store_id,count(customer_id) from customer group by store_id
+
+select store_id,count(*) from customer group by  store_id
+
+select store_id,count(*) from customer group by store_id having count(customer_id) >300
+
+--Que-1 we are lauching a platinum serice for our most loyal customer .we will assign platinum status to customer that have had 40 or more traction payment .
+--what customer_id are eligible for platinum status?
+
+select * from payment
+select customer_id,count(*) from  payment group by customer_id having count (*)>=40
+
+
+--Que-2 what are the customer id of customer who have spent more than 100 
+---in payment transaction with our staff_id member 2
+
+select customer_id,sum(amount) from payment where staff_id =2  group by customer_id  having sum(amount) >100
+
+
+--Que-3 return the customer id of customer who have spent at least 110 
+---with the staff member who has an id 2
+
+select * from payment
+SELECT customer_id,sum(amount) from payment where staff_id=2 group by customer_id having sum(amount)>110
+
+--Que-4 how many film begin with the letter j?
+select * from film where title ilike 'j%'
+
+--Que-5 what customer has the higthst customer id number whose name start with "E" and has an addres id lower than 500
+
+select * from customer
+select first_name,last_name from customer where first_name ilike 'E%' and address_id <500 order by address_id desc limit 1

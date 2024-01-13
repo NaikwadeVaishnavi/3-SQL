@@ -1,0 +1,15 @@
+--Que1 how many unique distrcts are our  customer from
+select count(distinct(district)) from address ---378
+
+
+--Que2 retreve the list if names for those district from the orevoues quetions
+select distinct (district) from address
+
+--Que3 how many film have rating 'R' and replacemnet cost between 5 and 15
+select * from film
+select count(*) from  film where rating='R' and replacement_cost between 5 and 15  ---52
+
+--Que4 how many film have word Truman somewhere in the title
+select count(*) from film where title ilike '%Truman%' ----5
+
+

@@ -1,0 +1,29 @@
+select * from film
+--addition
+select film_id + rental_duration as sum_all from film
+
+--subtraction
+select film_id - rental_duration as sub from film
+
+--multipication
+select rental_duration * length as mul from film
+
+--divsion
+select rental_rate/replacement_cost as avg_total from film
+
+--modulo
+select rental_rate % length as mod_all from film
+
+--exonatiation
+select rental_rate ^ length as ex from film
+
+--Squre root
+select rental_rate |/ length as sq from film
+
+----------------------------------------------------------------------------------------------------
+
+select round(rental_rate / replacement_cost,4) * 100 from film
+
+select round(rental_rate/ replacement_cost,4)*100 as percent_cost from film
+
+select 0.1 * replacement_cost as deposit from film
